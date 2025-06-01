@@ -5,3 +5,6 @@ gem 'pry'
 gem 'reline'
 gem 'rspec'
 gem 'rubocop'
+gem 'csv'
+
+

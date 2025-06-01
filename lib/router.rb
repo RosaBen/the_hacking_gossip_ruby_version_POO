@@ -1,4 +1,4 @@
-require 'controller'
+require_relative 'controller'
 
 
 class Router
@@ -29,6 +29,7 @@ class Router
                 puts "Ce choix n'existe pas, réessaye"
             end
         end
+
     end
 
 end
