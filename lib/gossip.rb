@@ -19,6 +19,26 @@ class Gossip
     end
     end
 
+    def self.all
+        all_gossips = []
+        CSV.foreach(FILE_PATH, headers:true ) do |row|
+            author = row["author"]
+            content = row["content"]
+            gossip = Gossip.new(author, content)
+            all_gossips << gossip
+        end
+        return all_gossips
+    end
+
+    def self.find(index)
+        all_gossips = Gossip.all
+        if index < 0 || index >= all_gossips.length
+            return nil
+        else
+            return all_gossips[index]
+        end
+    end
+
     def save
         CSV.open(FILE_PATH, "a") do |gossip|
          gossip << [@author, @content]
